@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Случайное слово</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <a
+        href="#"
+        onclick="generateRandomWord(); return false;"
+        class="btn btn--wide spacing-top-sm"
+        href=""
+        >Random word</a
+      >
+      <p id="randomWord"></p>
+    </div>
+
+    <script>
+      // Исходный список случайных слов
+      var originalWords = [
+        "Макогон",
+        "Грифон",
+        "Дракон",
+        "Монголо-татарське іго",
+        "Ярослав Мудрий",
+        "Батьківщина-мати",
+        "Межигір'я",
+        "Запорізька січ",
+        "Гомін",
+        "Борщ",
+        "Вишиванка",
+        "Гопак",
+        "З Богом",
+      ];
+
+      // Копия массива слов для работы с ним
+      var words = originalWords.slice();
+
+      function generateRandomWord() {
+        // Проверка, есть ли слова в массиве
+        if (words.length === 0) {
+          document.getElementById("randomWord").innerHTML =
+            "Всі слова використані";
+        } else {
+          // Генерация случайного индекса
+          var randomIndex = Math.floor(Math.random() * words.length);
+
+          // Получение и удаление случайного слова из массива
+          var randomWord = words.splice(randomIndex, 1)[0];
+
+          // Вывод слова на странице
+          document.getElementById("randomWord").innerHTML = randomWord;
+        }
+      }
+    </script>
+  </body>
+</html>

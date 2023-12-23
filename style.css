@@ -1,0 +1,90 @@
+body {
+  background: #10020a;
+  font-family: sans-serif;
+}
+
+.btn {
+  background-size: 50%, 100%;
+}
+
+.btn::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10em;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+}
+
+.btn {
+  position: relative;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#700f46),
+    color-stop(#d61361),
+    color-stop(#f41445),
+    color-stop(#fc1e39),
+    color-stop(#ff4f28),
+    to(#ffb11e)
+  );
+  background: linear-gradient(
+    90deg,
+    #700f46,
+    #d61361,
+    #f41445,
+    #fc1e39,
+    #ff4f28,
+    #ffb11e
+  );
+  background: url(/img/white-noise.png),
+    linear-gradient(
+      87.58deg,
+      #700f46 0.61%,
+      #d61361 27.89%,
+      #f41445 51.19%,
+      #fc1e39 81.31%,
+      #ff4f28 90.97%,
+      #ffb11e 109.72%
+    );
+  background-size: auto, auto;
+  background-size: 35%, 100%;
+  background-blend-mode: overlay, normal;
+  border-radius: 10em;
+  text-decoration: none;
+  padding: 2rem 4rem;
+  font-weight: 500;
+  display: inline-block;
+  -webkit-transition: background-size 0.4s ease-in-out;
+  transition: background-size 0.4s ease-in-out;
+}
+
+a {
+  color: white;
+}
+
+.btn:hover::after {
+  -webkit-box-shadow: 0 0 24px #ff0068;
+
+  box-shadow: 0 0 24px #ff0068;
+}
+
+p {
+  /* height: 200px; */
+  color: white;
+}
+.box {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 44px;
+}
